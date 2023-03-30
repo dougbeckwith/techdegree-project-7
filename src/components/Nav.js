@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Nav = ({ navLinks }) => {
   return (
@@ -7,7 +7,11 @@ const Nav = ({ navLinks }) => {
       <ul>
         {navLinks.map((link) => (
           <li key={link.id}>
-            <Link to={link.route}>{link.title}</Link>
+            <NavLink
+              to={link.route}
+              className={({ isActive }) => (isActive ? "active" : "")}>
+              {link.title}
+            </NavLink>
           </li>
         ))}
       </ul>

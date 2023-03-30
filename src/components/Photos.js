@@ -1,30 +1,28 @@
 import React from "react";
+import NotFound from "./NotFound";
+import { useLoaderData } from "react-router-dom";
+import Photo from "./Photo";
 
 const Photos = () => {
-  const photos = [
-    "https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg",
-    "https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg",
-    "https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg",
-    "https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg",
-    "https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg",
-    "https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg",
-    "https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg",
-    "https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg",
-    "https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg",
-    "https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg"
-  ];
+  const { photos, params } = useLoaderData();
+
   return (
     <div className="photo-container">
-      <h2>Results</h2>
-      <ul>
-        {photos.map((photo) => {
-          return (
-            <li>
-              <img src={photo} alt="" />
-            </li>
-          );
-        })}
-      </ul>
+      <h2>
+        {params.tag.charAt(0).toUpperCase() +
+          params.tag.slice(1) +
+          " " +
+          "Gifs"}
+      </h2>
+      {photos ? (
+        <ul>
+          {photos.map((photo, index) => {
+            return <Photo photo={photo} index={index} />;
+          })}
+        </ul>
+      ) : (
+        <NotFound />
+      )}
     </div>
   );
 };
