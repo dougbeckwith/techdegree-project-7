@@ -1,33 +1,19 @@
-import Search from "./components/Search";
+import React from "react";
 import Nav from "./components/Nav";
-import Photos from "./components/Photos";
-import "./App.css";
+import Search from "./components/Search";
+import { Outlet } from "react-router-dom";
 
-function App() {
-  const navLinks = [
-    {
-      id: 1,
-      route: "cats",
-      title: "Cats"
-    },
-    {
-      id: 2,
-      route: "dogs",
-      title: "Dogs"
-    },
-    {
-      id: 3,
-      route: "birds",
-      title: "Birds"
-    }
-  ];
+// Data
+import navLinks from "./data/nav-links";
+
+const App = () => {
   return (
     <div className="container">
-      <Search />
       <Nav navLinks={navLinks} />
-      <Photos />
+      <Search />
+      <Outlet />
     </div>
   );
-}
+};
 
 export default App;
