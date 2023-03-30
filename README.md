@@ -4,16 +4,29 @@ The React gallery app is an image gallery app built in a modular fashion to disp
 
 ### Install Dependencies
 
-Run: npm install
+```
 
-### Create Config File
-
-In the src directory create a config.js file.
-Get Flickr API Key here: https://www.flickr.com/services/apps/create/apply/
+npm install
 
 ```
 
-In config.js add:
+### Create Config File
+
+Get Flickr API Key here: https://www.flickr.com/services/apps/create/apply/
+
+Create config.js File:
+
+```
+
+cd src
+touch config.js
+
+```
+
+Add Your API Key In config.js:
+
+```
+
 const apiKey = "YOUR_API_KEY_HERE";
 export { apiKey };
 
@@ -21,4 +34,8 @@ export { apiKey };
 
 ### Run App
 
-Run: npm run start
+```
+
+npm run start
+
+```
