@@ -6,10 +6,12 @@ const Search = () => {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
 
+  // Handles input changes
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
 
+  // Handles form submit
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate(search);

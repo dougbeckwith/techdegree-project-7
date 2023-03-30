@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import Photo from "./Photo";
 
 const Photos = () => {
+  // photos is an array of photos
   const { photos, params } = useLoaderData();
 
   return (
@@ -21,6 +22,7 @@ const Photos = () => {
           })}
         </ul>
       ) : (
+        // Page to display if no photos
         <NotFound />
       )}
     </div>

@@ -1,5 +1,6 @@
 import { apiKey } from "../config";
 
+//Gets Photo Data
 async function getPhotoData(tag) {
   try {
     const photoResponse = await fetch(
@@ -15,6 +16,7 @@ async function getPhotoData(tag) {
   }
 }
 
+// Returns one photo url
 async function getOnePhoto(photoData) {
   try {
     const photoReponse = await fetch(
@@ -29,6 +31,7 @@ async function getOnePhoto(photoData) {
   }
 }
 
+// Returns array of Photos
 async function getPhotos(photoData) {
   try {
     const photos = await Promise.all(
