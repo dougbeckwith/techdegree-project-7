@@ -9,7 +9,6 @@ const Photos = () => {
 
   return (
     <div className="photo-container">
-      {console.log("test")}
       <h2>
         {params.tag.charAt(0).toUpperCase() +
           params.tag.slice(1) +
