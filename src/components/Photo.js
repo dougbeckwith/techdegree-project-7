@@ -1,8 +1,8 @@
 import React from "react";
 
-const Photo = ({ index, photo }) => {
+const Photo = ({ photo }) => {
   return (
-    <li key={index}>
+    <li>
       <img src={photo} alt="" />
     </li>
   );

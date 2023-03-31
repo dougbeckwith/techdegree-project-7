@@ -18,7 +18,7 @@ const Photos = () => {
       {photos ? (
         <ul>
           {photos.map((photo, index) => {
-            return <Photo photo={photo} index={index} />;
+            return <Photo photo={photo} key={index} />;
           })}
         </ul>
       ) : (
